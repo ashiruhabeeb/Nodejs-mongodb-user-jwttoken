@@ -1,0 +1,67 @@
+@hostname = http://localhost:4000
+
+GET {{hostname}}/api/health
+Content-Type: application/json
+
+###
+
+GET {{hostname}}/home
+Content-Type: application/json
+
+###
+
+POST {{hostname}}/api/users/register
+Content-Type: application/json
+
+{
+    "firstname": "Enzo",
+    "lastname": "Barrenechea",
+    "username": "EB40",
+    "email": "enzobarrenechea@yahoomail.com",
+    "password": "enzobarrenechea",
+    "confirmPassword": "enzobarrenechea",
+    "phone": "+2458986249932",
+    "address": "40, athletes hill, turin"
+}
+
+###
+GET {{hostname}}/api/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDYzNjM1MTAsImV4cCI6MTcxNDEzOTUxMH0.9A-zLCrT_r9MyWP3yS0HQQARq0lGw-4o837vDF7Xza4
+
+###
+
+GET {{hostname}}/api/users/65b4ef55e412cac02f2da37C
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDYzNjM1MTAsImV4cCI6MTcxNDEzOTUxMH0.9A-zLCrT_r9MyWP3yS0HQQARq0lGw-4o837vDF7Xza4
+
+###
+DELETE {{hostname}}/api/users/
+Content-Type: application/json
+
+###
+PATCH {{hostname}}/api/users/
+Content-Type: application/json
+
+{
+    "firstname": "Clark",
+    "lastname": "Kent",
+    "username": "Farm Boy",
+    "email": "farmboy@outlook.com",
+    "phone": "+2345010942001",
+    "address": "Kent's farm, wheat field, lousiana."
+}
+
+###
+POST {{hostname}}/api/users/65b4fb734db640026d62ec07
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDYzNjMzOTMsImV4cCI6MTcxNDEzOTM5M30.Gm4F1_DA7TX9d-4_rjm9tAKIHKrk8DFsWMz4eOflR1c
+
+###
+POST {{hostname}}/api/users/login
+Content-Type: application/json
+
+{
+    "username": "EB40",
+    "password": "enzobarrenechea"
+}
